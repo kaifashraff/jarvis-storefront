@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order · JARVIS Storefront</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+           background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%); color:#e8e8f0;
+           min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+            border-radius:18px; padding:36px; max-width:520px; width:100%; }
+    h1 { font-size:1.6rem; margin-bottom:6px; }
+    .tag { color:#8888aa; font-size:0.95rem; margin-bottom:22px; }
+    .price { color:#daa520; font-weight:800; font-size:2rem; margin-bottom:18px; }
+    .payline { color:#aaaacc; margin-bottom:12px; font-size:0.95rem; line-height:1.5; }
+    .upi-box { display:flex; gap:10px; align-items:center; background:rgba(218,165,32,0.12);
+               border:1px solid rgba(218,165,32,0.35); border-radius:10px; padding:12px 14px; margin-bottom:16px; }
+    #upi-id { font-family:ui-monospace,Consolas,monospace; color:#ffd700; flex:1; }
+    .copy { background:transparent; border:1px solid rgba(218,165,32,0.5); color:#daa520;
+            border-radius:8px; padding:6px 12px; cursor:pointer; font-size:0.85rem; }
+    .btn { display:block; text-align:center; padding:15px; border-radius:12px; text-decoration:none;
+           font-weight:700; margin-top:12px; }
+    .primary { background:linear-gradient(135deg,#daa520,#ffd700); color:#14141f; }
+    .ghost { border:1px solid rgba(255,255,255,0.18); color:#c8c8dd; }
+    .note { color:#66668a; font-size:0.8rem; margin-top:20px; line-height:1.6; }
+    .back { color:#6c63ff; text-decoration:none; font-size:0.9rem; display:inline-block; margin-top:18px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Select a product</h1>
+    <p class="tag" id="tagline"></p>
+    <div class="price" id="price"></div>
+    <p class="payline">Online checkout not wired yet - order on WhatsApp and pay by UPI. One tap, order confirm ho jayega.</p><a id="wa-pay" class="btn primary" href="#">Order on WhatsApp</a>
+    <a class="btn ghost" id="wa-confirm" href="#">I have paid — send my file</a>
+    <p class="note">Payment ke baad WhatsApp par screenshot bhej dein — file turant milegi.
+       Order id: <span id="oid"></span></p>
+    <a class="back" href="index.html">← Back to storefront</a>
+  </div>
+  <script>
+    var CATALOG = {"prod-0001": {"id": "prod-0001", "title": "3D Puff Embroidery Design", "price": "₹35", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0002": {"id": "prod-0002", "title": "Cap/Back Embroidery Design", "price": "₹20", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0003": {"id": "prod-0003", "title": "LAQAB Bridal Trial Package", "price": "₹199", "tagline": "Book Your Bridal Service", "category": "Service"}, "prod-0004": {"id": "prod-0004", "title": "Embroidery Digitizing — 10x12 Design", "price": "₹30", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0005": {"id": "prod-0005", "title": "LAQAB Wedding Package — Consultation", "price": "₹99", "tagline": "Book Your Bridal Service", "category": "Service"}, "prod-0006": {"id": "prod-0006", "title": "Chest Embroidery — Full Design", "price": "₹45", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0007": {"id": "prod-0007", "title": "Social Media Growth Kit", "price": "₹799", "tagline": "Instant Download", "category": "Digital"}, "prod-0008": {"id": "prod-0008", "title": "Bridal Lookbook Template", "price": "₹399", "tagline": "Instant Download", "category": "Digital"}, "prod-0009": {"id": "prod-0009", "title": "Embroidery Pattern Pack", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0010": {"id": "prod-0010", "title": "Wedding Invitation Templates", "price": "₹599", "tagline": "Instant Download", "category": "Digital"}, "prod-0011": {"id": "prod-0011", "title": "Bridal Mehndi Design Pack", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0012": {"id": "prod-0012", "title": "Embroidery Pricing & Cost Guide", "price": "₹199", "tagline": "Instant Download", "category": "Digital"}, "prod-0013": {"id": "prod-0013", "title": "Instagram Bio Link Page", "price": "₹449", "tagline": "Instant Download", "category": "Digital"}, "prod-0014": {"id": "prod-0014", "title": "Bridal Skincare & Pre-Wedding Glow Guide", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0015": {"id": "prod-0015", "title": "Wedding Hashtag Vault 200+", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0016": {"id": "prod-0016", "title": "Embroidery Business Startup Blueprint", "price": "₹599", "tagline": "Instant Download", "category": "Digital"}, "prod-0017": {"id": "prod-0017", "title": "Wedding Budget Planner", "price": "₹499", "tagline": "Instant Download", "category": "Digital"}, "prod-0018": {"id": "prod-0018", "title": "Photo-to-Embroidery Artwork Guide", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0019": {"id": "prod-0019", "title": "AI Reel Script Pack", "price": "₹499", "tagline": "Instant Download", "category": "Digital"}, "prod-0020": {"id": "prod-0020", "title": "Bridal Outfit Checklist", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0021": {"id": "prod-0021", "title": "Embroidery Stitch Mastery Guide", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0022": {"id": "prod-0022", "title": "Wedding Emergency Kit Checklist", "price": "₹199", "tagline": "Instant Download", "category": "Digital"}, "prod-0023": {"id": "prod-0023", "title": "Embroidery Thread Color Master Guide", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0024": {"id": "prod-0024", "title": "Wedding Speech & Toast Pack", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0025": {"id": "prod-0025", "title": "Digital Ruffle & Frill Design Pack", "price": "₹449", "tagline": "Instant Download", "category": "Digital"}, "prod-0026": {"id": "prod-0026", "title": "Instagram Reel Algorithm Guide 2026", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0027": {"id": "prod-0027", "title": "AI Video Prompt Pack — 100 Cinematic Prompts", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0028": {"id": "prod-0028", "title": "Faceless Channel Kit — 30 Viral Video Scripts", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0029": {"id": "prod-0029", "title": "Canva Template Bundle — 50 Social Templates", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0030": {"id": "prod-0030", "title": "AI Automation Prompts — 50 Workflow Prompts", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0031": {"id": "prod-0031", "title": "Mini Brand Kit — Logo + Palette + Font Guide", "price": "₹499", "tagline": "Instant Download", "category": "Digital"}, "prod-0032": {"id": "prod-0032", "title": "AI Video Prompt Pack — 100 Cinematic Prompts", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0033": {"id": "prod-0033", "title": "Faceless Channel Kit — 30 Viral Video Scripts", "price": "₹349", "tagline": "Instant Download", "category": "Digital"}, "prod-0034": {"id": "prod-0034", "title": "Canva Template Bundle — 50 Social Templates", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0035": {"id": "prod-0035", "title": "AI Automation Prompts — 50 Workflow Prompts", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0036": {"id": "prod-0036", "title": "Mini Brand Kit — Logo + Palette + Font Guide", "price": "₹499", "tagline": "Instant Download", "category": "Digital"}, "prod-0037": {"id": "prod-0037", "title": "Wedding Photoshoot Pose Guide - 100 Poses", "price": "₹199", "tagline": "Instant Download", "category": "Digital"}, "prod-0038": {"id": "prod-0038", "title": "Cinematic Wedding Video Editing Presets", "price": "₹449", "tagline": "Instant Download", "category": "Digital"}, "prod-0039": {"id": "prod-0039", "title": "Embroidery Logo Digitizing Service", "price": "₹79", "tagline": "Book Your Bridal Service", "category": "Service"}, "prod-0040": {"id": "prod-0040", "title": "Instagram Content Calendar - 365 Days", "price": "₹299", "tagline": "Instant Download", "category": "Digital"}, "prod-0041": {"id": "prod-0041", "title": "AI Wedding Vow Generator", "price": "₹149", "tagline": "Instant Download", "category": "Digital"}, "prod-0042": {"id": "prod-0042", "title": "Custom Monogram Embroidery Pack", "price": "₹199", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0043": {"id": "prod-0043", "title": "Bridal Lehenga Design Collection", "price": "₹249", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0044": {"id": "prod-0044", "title": "Sherwani Embroidery Blueprint", "price": "₹299", "tagline": "Machine-Ready Stitch Files", "category": "Digitizing"}, "prod-0045": {"id": "prod-0045", "title": "Mehndi Ceremony Photography Guide", "price": "₹179", "tagline": "Instant Download", "category": "Digital"}, "prod-0046": {"id": "prod-0046", "title": "Wedding Sangeet Choreography Planner", "price": "₹249", "tagline": "Instant Download", "category": "Digital"}, "prod-0047": {"id": "prod-0047", "title": "Bridal Jewelry Styling Guide", "price": "₹199", "tagline": "Instant Download", "category": "Digital"}, "prod-0048": {"id": "prod-0048", "title": "Wedding Favors & Gift Ideas Collection", "price": "₹149", "tagline": "Instant Download", "category": "Digital"}, "prod-0049": {"id": "prod-0049", "title": "Haldi Ceremony Decor Checklist", "price": "₹129", "tagline": "Instant Download", "category": "Digital"}};
+    var WA = "919987314177", PAYEE = "Kaif Ashraf", UPI = "";
+    var q = new URLSearchParams(location.search);
+    var id = q.get('p') || Object.keys(CATALOG)[0];
+    var item = CATALOG[id];
+    if (item) {
+      document.title = 'Order · ' + item.title;
+      document.getElementById('title').textContent = item.title;
+      document.getElementById('tagline').textContent = item.tagline || item.category || '';
+      document.getElementById('price').textContent = item.price;
+      document.getElementById('oid').textContent = id;
+      if (document.getElementById('upi-amt')) document.getElementById('upi-amt').textContent = item.price;
+      if (document.getElementById('upi-app')) {
+        document.getElementById('upi-app').href =
+          'upi://pay?pa=' + encodeURIComponent(UPI) + '&pn=' + encodeURIComponent(PAYEE) +
+          '&am=' + encodeURIComponent((item.price || '').replace(/[^0-9.]/g, '')) +
+          '&tn=' + encodeURIComponent('Order ' + id) + '&cu=INR';
+      }
+      var msg = 'Order: ' + item.title + ' (' + id + ') - ' + item.price;
+      document.getElementById('wa-confirm').href =
+        'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg + ' - payment done, please send file.');
+      if (document.getElementById('wa-pay')) document.getElementById('wa-pay').href =
+        'https://wa.me/' + WA + '?text=' + encodeURIComponent('Order: ' + item.title + ' (' + id + ') - ' + item.price);
+    }
+    function copyUpi() {
+      navigator.clipboard.writeText(UPI);
+      var b = event.target; b.textContent = 'Copied'; setTimeout(function(){ b.textContent = 'Copy'; }, 1500);
+    }
+  </script>
+</body>
+</html>

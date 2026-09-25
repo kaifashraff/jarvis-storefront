@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAQAB · Where Thread Becomes Art</title>
+<style>
+  :root {
+    --primary: #b8860b;
+    --primary-light: #daa520;
+    --primary-dark: #8b6914;
+    --bg: #fefcf5;
+    --bg-card: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --border: #e8dcc8;
+    --accent-red: #c0392b;
+    --gold-grad: linear-gradient(135deg, #b8860b, #daa520, #b8860b);
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+  }
+
+  /* WhatsApp CTA Floating */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: #25d366;
+    color: #fff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+    transition: all 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  }
+  .whatsapp-float span {
+    display: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+
+  /* Top WA CTA bar */
+  .wa-top-bar {
+    background: var(--gold-grad);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .wa-top-bar a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 20px 32px;
+    position: relative;
+  }
+  .header .brand {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+  .header .tagline {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+  .header .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold-grad);
+    margin: 16px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Container */
+  .container { max-width: 800px; margin: 0 auto; padding: 0 16px 80px; }
+
+  /* Page Sections */
+  .page {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    padding: 36px 28px;
+    box-shadow: var(--shadow);
+    page-break-inside: avoid;
+    position: relative;
+  }
+  .page-number {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+  .page-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-dark);
+  }
+  .page-title .icon { font-size: 1.4rem; }
+  .wa-cta-inline {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+  }
+  .wa-cta-inline:hover { background: #1da851; }
+
+  /* Page 1: Brand Story */
+  .story-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+  .story-text p { margin-bottom: 14px; }
+  .story-highlight {
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  /* Page 2: Product Catalog */
+  .catalog-grid { display: grid; gap: 16px; }
+  .catalog-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #fefcf5;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .catalog-card:hover { border-color: var(--primary-light); }
+  .catalog-card .info {}
+  .catalog-card .name {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .catalog-card .desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .catalog-card .price {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .catalog-section-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin: 20px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Page 3: Ordering Process */
+  .process-steps { counter-reset: step; }
+  .process-step {
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .process-step:last-child { border-bottom: none; }
+  .process-step .num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold-grad);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .process-step .content {}
+  .process-step .content .title { font-weight: 600; margin-bottom: 2px; }
+  .process-step .content .desc { font-size: 0.9rem; color: var(--text-muted); }
+
+  /* Page 4: FAQs */
+  .faq-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-weight: 600;
+    color: var(--primary-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 300;
+  }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+
+  /* Page 5: Contact & CTA */
+  .contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #fefcf5;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .contact-item .icon { font-size: 1.2rem; }
+  .big-wa-btn {
+    display: block;
+    text-align: center;
+    padding: 16px 24px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    transition: all 0.3s;
+  }
+  .big-wa-btn:hover { background: #1da851; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+
+  .footer-note {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff !important; }
+    .page { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .wa-top-bar { display: none !important; }
+    .whatsapp-float { display: none !important; }
+    .wa-cta-inline, .big-wa-btn { background: #25d366 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .process-step .num, .header .brand { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .header .brand { -webkit-text-fill-color: #b8860b; color: #b8860b; }
+  }
+
+  @media (max-width: 600px) {
+    .header .brand { font-size: 2.2rem; }
+    .page { padding: 20px 16px; }
+    .contact-details { grid-template-columns: 1fr; }
+    .catalog-card { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .catalog-card .price { align-self: flex-start; }
+    .whatsapp-float { width: 48px; height: 48px; font-size: 24px; bottom: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WhatsApp Top Bar -->
+<div class="wa-top-bar">
+  📲 Chat with LAQAB on WhatsApp →
+  <a href="https://wa.me/919987314177" target="_blank">+91 9987314177</a>
+</div>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919987314177" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  💬
+</a>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">LAQAB</div>
+    <div class="tagline">Where Thread Becomes Art</div>
+    <div class="divider"></div>
+  </header>
+
+  <!-- ===== PAGE 1: Brand Story ===== -->
+  <div class="page">
+    <div class="page-number">1 / 5</div>
+    <h2 class="page-title"><span class="icon">✨</span> Our Story</h2>
+    <div class="story-text">
+      <p>
+        <strong>LAQAB</strong> — an Urdu word meaning <em>title, honour, or epithet</em> — was born from
+        a simple belief: <strong>every bride deserves to feel like a queen.</strong>
+      </p>
+      <p>
+        What started as a small atelier in the heart of Old Delhi's embroidery district has grown into a
+        trusted name for handcrafted bridal wear. Our master artisans — many with over 25 years of experience
+        — bring generations of zardozi, resham, and gotta patti expertise to every piece we create.
+      </p>
+      <p>
+        We don't just stitch fabric. We <span class="story-highlight">weave stories, preserve traditions,
+        and create heirlooms</span> that brides pass down to their daughters.
+      </p>
+      <p>
+        From the first sketch to the final fitting, every LAQAB piece is a promise: <strong>craftsmanship
+        that honours the past, designed for the bride of today.</strong>
+      </p>
+      <p style="font-style:italic; margin-top: 16px; color: var(--primary-dark);">
+        "Your wedding day is the overture to your forever. Wear something that deserves the applause."
+      </p>
+    </div>
+    <a href="https://wa.me/919987314177" target="_blank" class="wa-cta-inline">💬 Chat with us on WhatsApp — Let's design your dream</a>
+  </div>
+
+  <!-- ===== PAGE 2: Product Catalog ===== -->
+  <div class="page">
+    <div class="page-number">2 / 5</div>
+    <h2 class="page-title"><span class="icon">👗</span> Complete Product Catalog</h2>
+
+    <div class="catalog-section-title">👰 Bridal Lehengas</div>
+    <div class="catalog-grid">
+      <div class="catalog-card"><div class="info"><div class="name">Royal Zardozi Lehenga</div><div class="desc">Heavy gold/silver zardozi, resham, sequins, full flare</div></div><div class="price">₹22,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Pastel Dream Lehenga</div><div class="desc">Lightweight pastels with delicate resham &amp; gotta patti</div></div><div class="price">₹15,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Red Bridal Signature</div><div class="desc">Classic red with full zardozi border, scalloped dupatta</div></div><div class="price">₹25,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Fusion Crop-Top Lehenga</div><div class="desc">Modern crop top + high-waist lehenga, contemporary motif</div></div><div class="price">₹18,000</div></div>
+    </div>
+
+    <div class="catalog-section-title">🌸 Wedding Guest &amp; Trousseau</div>
+    <div class="catalog-grid">
+      <div class="catalog-card"><div class="info"><div class="name">Resham Embroidered Saree</div><div class="desc">Pure silk saree with hand-done resham border &amp; pallu</div></div><div class="price">₹8,500</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Haldi Yellow Lehenga</div><div class="desc">Bright yellow, lightweight, mirror &amp; thread work</div></div><div class="price">₹9,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Mehndi Green Salwar Set</div><div class="desc">Green salwar kameez with gotta patti and sequins</div></div><div class="price">₹6,500</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Blush Pink Reception Gown</div><div class="desc">Floor-length gown with lace &amp; bead embroidery</div></div><div class="price">₹12,000</div></div>
+    </div>
+
+    <div class="catalog-section-title">👔 Groom's Wear</div>
+    <div class="catalog-grid">
+      <div class="catalog-card"><div class="info"><div class="name">Embroidered Sherwani</div><div class="desc">Maroon/ivory with zardozi &amp; pearl work</div></div><div class="price">₹14,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Navy Bandhgala Suit</div><div class="desc">Fusion bandhgala with subtle embroidery</div></div><div class="price">₹10,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Kurta Pajama Set</div><div class="desc">Pure cotton/linen, minimal thread work</div></div><div class="price">₹3,500</div></div>
+    </div>
+
+    <div class="catalog-section-title">📿 Accessories</div>
+    <div class="catalog-grid">
+      <div class="catalog-card"><div class="info"><div class="name">Embroidered Clutch</div><div class="desc">Potli-style clutch with zardozi &amp; pearls</div></div><div class="price">₹1,500</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Matching Dupatta</div><div class="desc">Custom embroidered dupatta (standalone)</div></div><div class="price">₹3,000</div></div>
+      <div class="catalog-card"><div class="info"><div class="name">Bridal Shawl</div><div class="desc">Pashmina blend with hand-embroidered border</div></div><div class="price">₹4,500</div></div>
+    </div>
+
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:16px; text-align:center;">
+      * Prices are starting ranges. Final pricing depends on customization, fabric, and embroidery complexity.
+      All pieces are made-to-order.
+    </p>
+    <a href="https://wa.me/919987314177" target="_blank" class="wa-cta-inline">💬 Get exact pricing for your custom design →</a>
+  </div>
+
+  <!-- ===== PAGE 3: Ordering Process ===== -->
+  <div class="page">
+    <div class="page-number">3 / 5</div>
+    <h2 class="page-title"><span class="icon">📋</span> How to Order</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="num">1</div>
+        <div class="content">
+          <div class="title">Reach Out on WhatsApp</div>
+          <div class="desc">Send us a message at <strong>+91 9987314177</strong> with your ideas, reference images, or just describe your dream outfit. We'll respond within 2-4 hours.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="num">2</div>
+        <div class="content">
+          <div class="title">Free Consultation &amp; Design Discussion</div>
+          <div class="desc">We'll understand your budget, preferred colours, fabrics, embroidery type, and timeline. We share fabric swatch photos and existing work samples.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="num">3</div>
+        <div class="content">
+          <div class="title">Get a Quote &amp; Design Sketch</div>
+          <div class="desc">Once we finalize the design, you'll receive a detailed quote and a digital design sketch. We require <strong>50% advance payment</strong> to begin production.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="num">4</div>
+        <div class="content">
+          <div class="title">Production (7-21 Days)</div>
+          <div class="desc">Our artisans begin crafting your piece. We'll share progress photos (embroidery WIP, fabric cutting, initial assembly) so you're always in the loop.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="num">5</div>
+        <div class="content">
+          <div class="title">Video Fitting &amp; Final Adjustments</div>
+          <div class="desc">We do a live video call fitting. Minor adjustments (if needed) are completed within 2-3 days. Your measurements or a well-fitted garment reference ensures perfect fit.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="num">6</div>
+        <div class="content">
+          <div class="title">Dispatch &amp; Delivery</div>
+          <div class="desc">We ship via courier with tracking. Delivery timelines: India — 3-5 days, International — 7-10 days. We share the tracking ID as soon as it's dispatched.</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://wa.me/919987314177" target="_blank" class="wa-cta-inline">💬 Start your order now →</a>
+  </div>
+
+  <!-- ===== PAGE 4: FAQs ===== -->
+  <div class="page">
+    <div class="page-number">4 / 5</div>
+    <h2 class="page-title"><span class="icon">❓</span> FAQs — for NRI Customers</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you ship internationally? What are the shipping costs?</div>
+      <div class="faq-a">Yes! We ship worldwide. Shipping costs vary by destination and package weight. Typically: USA/Canada — ₹2,500-3,500 ($30-42), UK/Europe — ₹2,000-3,000 ($24-36), UAE/GCC — ₹1,500-2,000 ($18-24), Australia — ₹2,500-3,500 ($30-42). We use reliable courier services (DHL/FedEx/DTDC) with full tracking.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I get measured if I'm not in India?</div>
+      <div class="faq-a">We provide a detailed measurement guide with photos. You can get measured at any local tailor, or we can walk you through it via a WhatsApp video call. For best results, send us a well-fitted garment of similar style and we take measurements from it. We also offer fabric swatch courier to your international address (nominal fee).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What payment methods do you accept from NRIs?</div>
+      <div class="faq-a">We accept international bank transfers (SWIFT/IBAN), Wise (TransferWise), PayPal (+4% fee), Google Pay (for Indian accounts), and major credit/debit cards through our payment gateway. All transactions are secure and we provide proper invoices.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if the outfit doesn't fit? Return/exchange policy?</div>
+      <div class="faq-a">Since every piece is made-to-order, we cannot accept general returns. However, if there's a defect or sizing error on our part, we will fix it free of charge (including shipping). For minor fit issues, we can guide your local tailor through adjustments via video. We recommend ordering 6-8 weeks before your event to allow time for any adjustments.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Are there customs/duties I should expect?</div>
+      <div class="faq-a">Import duties and taxes are borne by the customer and vary by country. We declare the actual value on customs forms and provide all necessary documentation. USA has a duty-free threshold of $800 for personal shipments. UK/EU customers should expect 20-30% duties+VAT in most cases. We advise checking with your local customs office.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How long in advance should I order for a destination wedding?</div>
+      <div class="faq-a">We recommend ordering <strong>8-12 weeks before</strong> your event for international orders. This gives us 3-4 weeks for production, 1 week for fittings, 1-2 weeks for shipping, and buffer time for any adjustments. Rush orders (3-4 weeks) are possible with a 15% surcharge.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I see fabric/embroidery samples before ordering?</div>
+      <div class="faq-a">Absolutely! We can courier a fabric swatch card and embroidery sample to your international address for ₹1,000 ($12) — refundable upon order. You can also join a WhatsApp video call where we show you available fabrics and current work in progress.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is your cancellation policy?</div>
+      <div class="faq-a">Cancellations are accepted within 48 hours of order placement with a full refund (minus payment gateway fees). After 48 hours, if production has started (fabric cutting/embroidery begun), the advance payment is non-refundable. We always share production updates so you know the status.</div>
+    </div>
+
+    <a href="https://wa.me/919987314177" target="_blank" class="wa-cta-inline">💬 Still have questions? Ask us directly →</a>
+  </div>
+
+  <!-- ===== PAGE 5: Contact & Final CTA ===== -->
+  <div class="page">
+    <div class="page-number">5 / 5</div>
+    <h2 class="page-title"><span class="icon">📞</span> Let's Create Something Beautiful</h2>
+
+    <p style="color:var(--text-muted); margin-bottom: 16px; text-align:center;">
+      Your dream bridal outfit is just one message away.
+    </p>
+
+    <a href="https://wa.me/919987314177" target="_blank" class="big-wa-btn">
+      💬 Chat Now on WhatsApp → +91 9987314177
+    </a>
+
+    <div class="contact-details">
+      <div class="contact-item"><span class="icon">💬</span> WhatsApp: +91 9987314177</div>
+      <div class="contact-item"><span class="icon">📧</span> Email: hello@laqab.in</div>
+      <div class="contact-item"><span class="icon">🌐</span> Web: kaifashraff.github.io/laqab</div>
+      <div class="contact-item"><span class="icon">📍</span> Chandni Chowk, Delhi, India</div>
+    </div>
+
+    <div style="text-align:center; margin: 20px 0; padding: 16px; background: #fefcf5; border-radius: 8px; border: 1px solid var(--border);">
+      <p style="font-weight:600; color: var(--primary-dark);">📸 Follow us on Instagram</p>
+      <p style="font-size:0.9rem; color:var(--text-muted);">@laqab · Daily bridal inspiration, behind-the-scenes, and client stories</p>
+    </div>
+
+    <div style="text-align:center; padding: 12px; background: #fff8e8; border-radius: 8px; border: 1px solid var(--border);">
+      <p style="font-weight:600; font-size:1rem;">🌟 Why LAQAB?</p>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:8px; margin-top:10px; font-size:0.85rem; color:var(--text-muted); text-align:center;">
+        <div>🧵 Handcrafted Excellence</div>
+        <div>👗 Made-to-Measure Fit</div>
+        <div>🌍 Worldwide Delivery</div>
+        <div>💬 Real-time Order Updates</div>
+        <div>🎨 Custom Design Service</div>
+        <div>🧧 Heirloom Quality</div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 20px; font-size:0.9rem; color:var(--primary-dark); font-weight:500;">
+      "Where thread becomes art, and art becomes you."
+    </p>
+
+    <a href="https://wa.me/919987314177" target="_blank" class="wa-cta-inline">💬 Message us now to place your order</a>
+  </div>
+
+  <footer class="footer-note">
+    LAQAB · Where Thread Becomes Art · © 2026<br>
+    This brochure can be shared, printed, or forwarded as PDF. For desktop: File → Print → Save as PDF.
+  </footer>
+
+</div>
+
+</body>
+</html>

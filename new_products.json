@@ -1,0 +1,42 @@
+[
+  {
+    "name": "WhatsApp Sales Funnel Kit",
+    "price": 499.0,
+    "type": "digital",
+    "id": "PROD-0032",
+    "created_at": "2026-08-15T04:30:00",
+    "status": "active"
+  },
+  {
+    "name": "Instagram Story Templates Pack",
+    "price": 349.0,
+    "type": "digital",
+    "id": "PROD-0033",
+    "created_at": "2026-08-15T04:30:00",
+    "status": "active"
+  },
+  {
+    "name": "Embroidery Machine Setup Guide",
+    "price": 299.0,
+    "type": "digital",
+    "id": "PROD-0034",
+    "created_at": "2026-08-15T04:30:00",
+    "status": "active"
+  },
+  {
+    "name": "Wedding Vendor List & Contacts",
+    "price": 199.0,
+    "type": "digital",
+    "id": "PROD-0035",
+    "created_at": "2026-08-15T04:30:00",
+    "status": "active"
+  },
+  {
+    "name": "Client Onboarding Kit",
+    "price": 399.0,
+    "type": "digital",
+    "id": "PROD-0036",
+    "created_at": "2026-08-15T04:30:00",
+    "status": "active"
+  }
+]

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS Storefront · Digital Products</title>
+  <meta name="description" content="Handcrafted digital products by Kaif Ashraf — LAQAB embroidery, templates, and content packs.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+      color: #e8e8f0;
+      min-height: 100vh;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 60px; }
+    header h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #daa520, #ffd700, #daa520); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header p { color: #8888aa; font-size: 1.1rem; margin-top: 8px; }
+    .date-badge { display: inline-block; background: rgba(218,165,32,0.15); color: #daa520; padding: 4px 16px; border-radius: 20px; font-size: 0.85rem; margin-top: 12px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .product-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 32px; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .product-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); border-color: rgba(218,165,32,0.4); }
+    .product-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .product-category { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #daa520; margin-bottom: 8px; }
+    .product-card h3 { font-size: 1.4rem; margin-bottom: 4px; }
+    .tagline { color: #aaaacc; font-size: 0.95rem; margin-bottom: 12px; font-style: italic; }
+    .description { color: #7777aa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .price { font-weight: 700; color: #daa520; font-size: 1.1rem; }
+    .cta { color: #6c63ff; font-weight: 600; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px; color: #555577; font-size: 0.85rem; }
+    @media (max-width: 768px) { header h1 { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛍️ JARVIS Storefront</h1>
+      <p>Handcrafted digital products by Kaif Ashraf</p>
+      <div class="date-badge">Regenerated 25 Sep 2026 at 22:01 IST</div>
+    </header>
+    <div class="products-grid">
+        <div class="product-card" onclick="location.href='order.html?p=prod-0001'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>3D Puff Embroidery Design</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">3D Puff Embroidery Design — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹35</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0002'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Cap/Back Embroidery Design</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Cap/Back Embroidery Design — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹20</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0003'">
+          <div class="product-icon">💼</div>
+          <div class="product-category">Service</div>
+          <h3>LAQAB Bridal Trial Package</h3>
+          <p class="tagline">Book Your Bridal Service</p>
+          <p class="description">LAQAB Bridal Trial Package — premium Indian wedding embroidery by LAQAB. Custom lehenga, sherwani & bridal pieces. WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0004'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Embroidery Digitizing — 10x12 Design</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Embroidery Digitizing — 10x12 Design — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹30</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0005'">
+          <div class="product-icon">💼</div>
+          <div class="product-category">Service</div>
+          <h3>LAQAB Wedding Package — Consultation</h3>
+          <p class="tagline">Book Your Bridal Service</p>
+          <p class="description">LAQAB Wedding Package — Consultation — premium Indian wedding embroidery by LAQAB. Custom lehenga, sherwani & bridal pieces. WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹99</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0006'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Chest Embroidery — Full Design</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Chest Embroidery — Full Design — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹45</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0007'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Social Media Growth Kit</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Social Media Growth Kit — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹799</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0008'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Bridal Lookbook Template</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Bridal Lookbook Template — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹399</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0009'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Embroidery Pattern Pack</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Embroidery Pattern Pack — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0010'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Invitation Templates</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Invitation Templates — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹599</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0011'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Bridal Mehndi Design Pack</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Bridal Mehndi Design Pack — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0012'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Embroidery Pricing & Cost Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Embroidery Pricing & Cost Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0013'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Instagram Bio Link Page</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Instagram Bio Link Page — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹449</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0014'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Bridal Skincare & Pre-Wedding Glow Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Bridal Skincare & Pre-Wedding Glow Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0015'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Hashtag Vault 200+</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Hashtag Vault 200+ — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0016'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Embroidery Business Startup Blueprint</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Embroidery Business Startup Blueprint — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹599</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0017'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Budget Planner</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Budget Planner — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹499</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0018'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Photo-to-Embroidery Artwork Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Photo-to-Embroidery Artwork Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0019'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Reel Script Pack</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Reel Script Pack — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹499</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0020'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Bridal Outfit Checklist</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Bridal Outfit Checklist — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0021'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Embroidery Stitch Mastery Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Embroidery Stitch Mastery Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0022'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Emergency Kit Checklist</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Emergency Kit Checklist — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0023'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Embroidery Thread Color Master Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Embroidery Thread Color Master Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0024'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Speech & Toast Pack</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Speech & Toast Pack — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0025'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Digital Ruffle & Frill Design Pack</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Digital Ruffle & Frill Design Pack — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹449</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0026'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Instagram Reel Algorithm Guide 2026</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Instagram Reel Algorithm Guide 2026 — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0027'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Video Prompt Pack — 100 Cinematic Prompts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Video Prompt Pack — 100 Cinematic Prompts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0028'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Faceless Channel Kit — 30 Viral Video Scripts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Faceless Channel Kit — 30 Viral Video Scripts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0029'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Canva Template Bundle — 50 Social Templates</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Canva Template Bundle — 50 Social Templates — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0030'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Automation Prompts — 50 Workflow Prompts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Automation Prompts — 50 Workflow Prompts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0031'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Mini Brand Kit — Logo + Palette + Font Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Mini Brand Kit — Logo + Palette + Font Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹499</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0032'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Video Prompt Pack — 100 Cinematic Prompts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Video Prompt Pack — 100 Cinematic Prompts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0033'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Faceless Channel Kit — 30 Viral Video Scripts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Faceless Channel Kit — 30 Viral Video Scripts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹349</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0034'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Canva Template Bundle — 50 Social Templates</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Canva Template Bundle — 50 Social Templates — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0035'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Automation Prompts — 50 Workflow Prompts</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Automation Prompts — 50 Workflow Prompts — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0036'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Mini Brand Kit — Logo + Palette + Font Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Mini Brand Kit — Logo + Palette + Font Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹499</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0037'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Photoshoot Pose Guide - 100 Poses</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Photoshoot Pose Guide - 100 Poses — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0038'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Cinematic Wedding Video Editing Presets</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Cinematic Wedding Video Editing Presets — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹449</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0039'">
+          <div class="product-icon">💼</div>
+          <div class="product-category">Service</div>
+          <h3>Embroidery Logo Digitizing Service</h3>
+          <p class="tagline">Book Your Bridal Service</p>
+          <p class="description">Embroidery Logo Digitizing Service — premium Indian wedding embroidery by LAQAB. Custom lehenga, sherwani & bridal pieces. WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹79</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0040'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Instagram Content Calendar - 365 Days</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Instagram Content Calendar - 365 Days — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0041'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>AI Wedding Vow Generator</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">AI Wedding Vow Generator — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹149</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0042'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Custom Monogram Embroidery Pack</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Custom Monogram Embroidery Pack — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0043'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Bridal Lehenga Design Collection</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Bridal Lehenga Design Collection — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0044'">
+          <div class="product-icon">🧵</div>
+          <div class="product-category">Digitizing</div>
+          <h3>Sherwani Embroidery Blueprint</h3>
+          <p class="tagline">Machine-Ready Stitch Files</p>
+          <p class="description">Sherwani Embroidery Blueprint — DST / PES / EXP formats, machine-tested. 48h standard turnaround (24h express). WhatsApp: +91 9987314177.</p>
+          <div class="product-footer">
+            <span class="price">₹299</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0045'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Mehndi Ceremony Photography Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Mehndi Ceremony Photography Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹179</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0046'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Sangeet Choreography Planner</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Sangeet Choreography Planner — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹249</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0047'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Bridal Jewelry Styling Guide</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Bridal Jewelry Styling Guide — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹199</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0048'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Wedding Favors & Gift Ideas Collection</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Wedding Favors & Gift Ideas Collection — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹149</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div>
+        <div class="product-card" onclick="location.href='order.html?p=prod-0049'">
+          <div class="product-icon">📦</div>
+          <div class="product-category">Digital</div>
+          <h3>Haldi Ceremony Decor Checklist</h3>
+          <p class="tagline">Instant Download</p>
+          <p class="description">Haldi Ceremony Decor Checklist — JARVIS-generated digital product. Ready-to-use, WhatsApp-optimized. Download after payment.</p>
+          <div class="product-footer">
+            <span class="price">₹129</span>
+            <span class="cta">Buy Now →</span>
+          </div>
+        </div></div>
+    <footer>
+      <p>Part of the $1B Mission · Built by JARVIS · Powered by Hermes</p>
+    </footer>
+  </div>
+</body>
+</html>

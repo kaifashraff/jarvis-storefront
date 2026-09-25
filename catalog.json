@@ -1,0 +1,399 @@
+{
+  "last_updated": "2026-09-25T22:01:58.925894",
+  "storefront": "C:\\Users\\ADMIN\\.hermes\\sales\\money-engine\\products\\index.html",
+  "product_count": 49,
+  "products": [
+    {
+      "id": "prod-0001",
+      "title": "3D Puff Embroidery Design",
+      "category": "Digitizing",
+      "price": "\u20b935",
+      "file_exists": true,
+      "file_size_bytes": 709
+    },
+    {
+      "id": "prod-0002",
+      "title": "Cap/Back Embroidery Design",
+      "category": "Digitizing",
+      "price": "\u20b920",
+      "file_exists": true,
+      "file_size_bytes": 676
+    },
+    {
+      "id": "prod-0003",
+      "title": "LAQAB Bridal Trial Package",
+      "category": "Service",
+      "price": "\u20b9199",
+      "file_exists": true,
+      "file_size_bytes": 647
+    },
+    {
+      "id": "prod-0004",
+      "title": "Embroidery Digitizing \u2014 10x12 Design",
+      "category": "Digitizing",
+      "price": "\u20b930",
+      "file_exists": true,
+      "file_size_bytes": 682
+    },
+    {
+      "id": "prod-0005",
+      "title": "LAQAB Wedding Package \u2014 Consultation",
+      "category": "Service",
+      "price": "\u20b999",
+      "file_exists": true,
+      "file_size_bytes": 646
+    },
+    {
+      "id": "prod-0006",
+      "title": "Chest Embroidery \u2014 Full Design",
+      "category": "Digitizing",
+      "price": "\u20b945",
+      "file_exists": true,
+      "file_size_bytes": 674
+    },
+    {
+      "id": "prod-0007",
+      "title": "Social Media Growth Kit",
+      "category": "Digital",
+      "price": "\u20b9799",
+      "file_exists": true,
+      "file_size_bytes": 1181
+    },
+    {
+      "id": "prod-0008",
+      "title": "Bridal Lookbook Template",
+      "category": "Digital",
+      "price": "\u20b9399",
+      "file_exists": true,
+      "file_size_bytes": 2793
+    },
+    {
+      "id": "prod-0009",
+      "title": "Embroidery Pattern Pack",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": true,
+      "file_size_bytes": 1031
+    },
+    {
+      "id": "prod-0010",
+      "title": "Wedding Invitation Templates",
+      "category": "Digital",
+      "price": "\u20b9599",
+      "file_exists": true,
+      "file_size_bytes": 703
+    },
+    {
+      "id": "prod-0011",
+      "title": "Bridal Mehndi Design Pack",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": true,
+      "file_size_bytes": 756
+    },
+    {
+      "id": "prod-0012",
+      "title": "Embroidery Pricing & Cost Guide",
+      "category": "Digital",
+      "price": "\u20b9199",
+      "file_exists": true,
+      "file_size_bytes": 677
+    },
+    {
+      "id": "prod-0013",
+      "title": "Instagram Bio Link Page",
+      "category": "Digital",
+      "price": "\u20b9449",
+      "file_exists": true,
+      "file_size_bytes": 1384
+    },
+    {
+      "id": "prod-0014",
+      "title": "Bridal Skincare & Pre-Wedding Glow Guide",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": true,
+      "file_size_bytes": 955
+    },
+    {
+      "id": "prod-0015",
+      "title": "Wedding Hashtag Vault 200+",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": true,
+      "file_size_bytes": 808
+    },
+    {
+      "id": "prod-0016",
+      "title": "Embroidery Business Startup Blueprint",
+      "category": "Digital",
+      "price": "\u20b9599",
+      "file_exists": true,
+      "file_size_bytes": 940
+    },
+    {
+      "id": "prod-0017",
+      "title": "Wedding Budget Planner",
+      "category": "Digital",
+      "price": "\u20b9499",
+      "file_exists": true,
+      "file_size_bytes": 1908
+    },
+    {
+      "id": "prod-0018",
+      "title": "Photo-to-Embroidery Artwork Guide",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": true,
+      "file_size_bytes": 963
+    },
+    {
+      "id": "prod-0019",
+      "title": "AI Reel Script Pack",
+      "category": "Digital",
+      "price": "\u20b9499",
+      "file_exists": true,
+      "file_size_bytes": 1407
+    },
+    {
+      "id": "prod-0020",
+      "title": "Bridal Outfit Checklist",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": true,
+      "file_size_bytes": 2198
+    },
+    {
+      "id": "prod-0021",
+      "title": "Embroidery Stitch Mastery Guide",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": true,
+      "file_size_bytes": 1257
+    },
+    {
+      "id": "prod-0022",
+      "title": "Wedding Emergency Kit Checklist",
+      "category": "Digital",
+      "price": "\u20b9199",
+      "file_exists": true,
+      "file_size_bytes": 826
+    },
+    {
+      "id": "prod-0023",
+      "title": "Embroidery Thread Color Master Guide",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": true,
+      "file_size_bytes": 1036
+    },
+    {
+      "id": "prod-0024",
+      "title": "Wedding Speech & Toast Pack",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": true,
+      "file_size_bytes": 1333
+    },
+    {
+      "id": "prod-0025",
+      "title": "Digital Ruffle & Frill Design Pack",
+      "category": "Digital",
+      "price": "\u20b9449",
+      "file_exists": true,
+      "file_size_bytes": 1225
+    },
+    {
+      "id": "prod-0026",
+      "title": "Instagram Reel Algorithm Guide 2026",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": true,
+      "file_size_bytes": 1329
+    },
+    {
+      "id": "prod-0027",
+      "title": "AI Video Prompt Pack \u2014 100 Cinematic Prompts",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": true,
+      "file_size_bytes": 881
+    },
+    {
+      "id": "prod-0028",
+      "title": "Faceless Channel Kit \u2014 30 Viral Video Scripts",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": true,
+      "file_size_bytes": 779
+    },
+    {
+      "id": "prod-0029",
+      "title": "Canva Template Bundle \u2014 50 Social Templates",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": true,
+      "file_size_bytes": 660
+    },
+    {
+      "id": "prod-0030",
+      "title": "AI Automation Prompts \u2014 50 Workflow Prompts",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": true,
+      "file_size_bytes": 782
+    },
+    {
+      "id": "prod-0031",
+      "title": "Mini Brand Kit \u2014 Logo + Palette + Font Guide",
+      "category": "Digital",
+      "price": "\u20b9499",
+      "file_exists": true,
+      "file_size_bytes": 659
+    },
+    {
+      "id": "prod-0032",
+      "title": "AI Video Prompt Pack \u2014 100 Cinematic Prompts",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0033",
+      "title": "Faceless Channel Kit \u2014 30 Viral Video Scripts",
+      "category": "Digital",
+      "price": "\u20b9349",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0034",
+      "title": "Canva Template Bundle \u2014 50 Social Templates",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0035",
+      "title": "AI Automation Prompts \u2014 50 Workflow Prompts",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0036",
+      "title": "Mini Brand Kit \u2014 Logo + Palette + Font Guide",
+      "category": "Digital",
+      "price": "\u20b9499",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0037",
+      "title": "Wedding Photoshoot Pose Guide - 100 Poses",
+      "category": "Digital",
+      "price": "\u20b9199",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0038",
+      "title": "Cinematic Wedding Video Editing Presets",
+      "category": "Digital",
+      "price": "\u20b9449",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0039",
+      "title": "Embroidery Logo Digitizing Service",
+      "category": "Service",
+      "price": "\u20b979",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0040",
+      "title": "Instagram Content Calendar - 365 Days",
+      "category": "Digital",
+      "price": "\u20b9299",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0041",
+      "title": "AI Wedding Vow Generator",
+      "category": "Digital",
+      "price": "\u20b9149",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0042",
+      "title": "Custom Monogram Embroidery Pack",
+      "category": "Digitizing",
+      "price": "\u20b9199",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0043",
+      "title": "Bridal Lehenga Design Collection",
+      "category": "Digitizing",
+      "price": "\u20b9249",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0044",
+      "title": "Sherwani Embroidery Blueprint",
+      "category": "Digitizing",
+      "price": "\u20b9299",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0045",
+      "title": "Mehndi Ceremony Photography Guide",
+      "category": "Digital",
+      "price": "\u20b9179",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0046",
+      "title": "Wedding Sangeet Choreography Planner",
+      "category": "Digital",
+      "price": "\u20b9249",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0047",
+      "title": "Bridal Jewelry Styling Guide",
+      "category": "Digital",
+      "price": "\u20b9199",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0048",
+      "title": "Wedding Favors & Gift Ideas Collection",
+      "category": "Digital",
+      "price": "\u20b9149",
+      "file_exists": false,
+      "file_size_bytes": 0
+    },
+    {
+      "id": "prod-0049",
+      "title": "Haldi Ceremony Decor Checklist",
+      "category": "Digital",
+      "price": "\u20b9129",
+      "file_exists": false,
+      "file_size_bytes": 0
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandra Chen · Resume</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-card: #f8f9fa;
+    --text: #1a1a2e;
+    --text-secondary: #6c757d;
+    --accent: #6c63ff;
+    --accent-light: rgba(108, 99, 255, 0.12);
+    --border: #e9ecef;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+    --timeline-line: #e9ecef;
+    --skill-bar: #e9ecef;
+    --radius: 12px;
+    --transition: 0.3s ease;
+  }
+  [data-theme="dark"] {
+    --bg: #0f0f1a;
+    --bg-card: #1a1a2e;
+    --text: #e8e8f0;
+    --text-secondary: #a0a0b8;
+    --accent: #8b83ff;
+    --accent-light: rgba(139, 131, 255, 0.15);
+    --border: #2a2a40;
+    --shadow: 0 2px 12px rgba(0,0,0,0.3);
+    --timeline-line: #2a2a40;
+    --skill-bar: #2a2a40;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background var(--transition), color var(--transition);
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 1000;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+  .theme-toggle:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  
+  /* Header / Hero */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .hero .title {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .hero .tagline {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Quick Info Bar */
+  .quick-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    padding: 20px 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  .quick-info span { display: flex; align-items: center; gap: 6px; }
+  .quick-info .icon { font-size: 1.1rem; }
+
+  /* Sections */
+  .section {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin: 24px 0;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: background var(--transition), border var(--transition);
+  }
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+  }
+  .section-title .icon { font-size: 1.3rem; }
+
+  /* About */
+  .about-text { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; }
+
+  /* Experience Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--timeline-line);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 28px 20px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 0 0 2px var(--accent);
+    z-index: 1;
+  }
+  .timeline-period {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .timeline-company {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .timeline-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+  .timeline-desc ul { list-style: none; padding: 0; }
+  .timeline-desc li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 4px;
+  }
+  .timeline-desc li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+  .skill-group { }
+  .skill-group-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+  .skill-item { margin-bottom: 10px; }
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+  .skill-name { font-weight: 500; }
+  .skill-pct { color: var(--accent); font-weight: 600; }
+  .skill-bar {
+    height: 6px;
+    background: var(--skill-bar);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #a78bfa);
+    border-radius: 3px;
+    transition: width 0.6s ease;
+    width: 0%;
+  }
+  .skill-fill.animated { animation: fillBar 1s ease forwards; }
+  @keyframes fillBar { to { width: var(--pct); } }
+
+  /* Education */
+  .edu-item { margin-bottom: 14px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree { font-weight: 600; }
+  .edu-school { color: var(--text-secondary); font-size: 0.9rem; }
+  .edu-year { color: var(--accent); font-size: 0.85rem; font-weight: 500; }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.1);
+  }
+  .contact-card .icon {
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
+  .contact-card .label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+  .contact-card .value { font-size: 0.9rem; font-weight: 500; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  /* Print Styles */
+  @media print {
+    body { background: #fff !important; color: #000 !important; }
+    .theme-toggle { display: none !important; }
+    .section { background: #fafafa !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+    .container { max-width: 100%; padding: 0.3in; }
+    .hero { padding: 20px 0 30px; }
+    .hero h1 { font-size: 2.2rem; }
+    .contact-card { background: #f5f5f5 !important; border: 1px solid #ddd !important; }
+    .skill-fill { background: #333 !important; }
+    .skill-bar { background: #ddd !important; }
+    .timeline-item::before { border-color: #fafafa !important; }
+    .timeline::before { background: #ddd !important; }
+    @page { margin: 0.5in; }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 12px; }
+    .hero h1 { font-size: 2rem; }
+    .section { padding: 20px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .quick-info { flex-direction: column; align-items: center; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span id="theme-icon">🌙</span>
+  <span id="theme-label">Dark</span>
+</button>
+
+<div class="container">
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Alexandra Chen</h1>
+    <div class="title">Senior Product Designer</div>
+    <p class="tagline">Crafting human-centered digital experiences that drive measurable business impact</p>
+  </header>
+
+  <!-- Quick Info -->
+  <div class="quick-info">
+    <span><span class="icon">📍</span> San Francisco, CA</span>
+    <span><span class="icon">📧</span> alex@chen.design</span>
+    <span><span class="icon">📱</span> +1 (415) 555-0192</span>
+    <span><span class="icon">🔗</span> linkedin.com/in/alexchen</span>
+    <span><span class="icon">🖥️</span> chen.design</span>
+  </div>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2 class="section-title"><span class="icon">👋</span> About Me</h2>
+    <p class="about-text">
+      Results-driven Product Designer with 7+ years of experience transforming complex problems into
+      elegant, accessible solutions. Passionate about design systems, data-informed decision making,
+      and mentoring the next generation of designers. Led design initiatives that increased user
+      engagement by 40% and reduced support tickets by 25% through intuitive interface improvements.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <h2 class="section-title"><span class="icon">💼</span> Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-period">Jan 2022 — Present</div>
+        <div class="timeline-role">Senior Product Designer</div>
+        <div class="timeline-company">Lumina Labs · San Francisco, CA</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>Led redesign of core SaaS platform, improving NPS from 32 to 58 and increasing activation by 35%</li>
+            <li>Built and maintained a comprehensive design system used by 12 product teams across 4 product lines</li>
+            <li>Established user research program conducting 80+ interviews and usability tests per quarter</li>
+            <li>Reduced design-to-developer handoff friction by 60% through Figma component libraries and documentation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">Mar 2019 — Dec 2021</div>
+        <div class="timeline-role">Product Designer</div>
+        <div class="timeline-company">Verto Financial · New York, NY</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>Designed end-to-end mobile banking experience for 2M+ users, achieving 4.7★ App Store rating</li>
+            <li>Increased feature adoption by 50% through onboarding redesign and contextual education flows</li>
+            <li>Collaborated with engineering on accessibility audit, achieving WCAG 2.1 AA compliance across all products</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">Jun 2017 — Feb 2019</div>
+        <div class="timeline-role">Junior Designer</div>
+        <div class="timeline-company">Bright Studio · Boston, MA</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>Created visual assets for 30+ client campaigns across web, email, and social media</li>
+            <li>Developed reusable component templates that reduced production time by 40%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <h2 class="section-title"><span class="icon">⚡</span> Skills &amp; Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Design</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">UX Strategy</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:95%; width:95%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Wireframing</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:90%; width:90%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Prototyping</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:92%; width:92%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">User Research</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:88%; width:88%;"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Tools</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Figma</span><span class="skill-pct">98%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:98%; width:98%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Framer</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:85%; width:85%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">After Effects</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:75%; width:75%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Webflow</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:80%; width:80%;"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">HTML/CSS</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:90%; width:90%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:78%; width:78%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:65%; width:65%;"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill animated" style="--pct:70%; width:70%;"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section" id="education">
+    <h2 class="section-title"><span class="icon">🎓</span> Education</h2>
+    <div class="edu-item">
+      <div class="edu-degree">B.F.A. in Interaction Design</div>
+      <div class="edu-school">California College of the Arts</div>
+      <div class="edu-year">2013 — 2017 · Magna Cum Laude</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Google UX Design Professional Certificate</div>
+      <div class="edu-school">Coursera / Google</div>
+      <div class="edu-year">2021</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2 class="section-title"><span class="icon">📬</span> Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📧</div>
+        <div><div class="label">Email</div><div class="value">alex@chen.design</div></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📱</div>
+        <div><div class="label">Phone</div><div class="value">+1 (415) 555-0192</div></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🔗</div>
+        <div><div class="label">LinkedIn</div><div class="value">/in/alexchen</div></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🖥️</div>
+        <div><div class="label">Portfolio</div><div class="value">chen.design</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Alexandra Chen · Crafted with care ✦
+  </footer>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const icon = document.getElementById('theme-icon');
+  const label = document.getElementById('theme-label');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme');
+    icon.textContent = '🌙';
+    label.textContent = 'Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☀️';
+    label.textContent = 'Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+// Load saved theme
+(function() {
+  const saved = localStorage.getItem('theme');
+  const html = document.documentElement;
+  const icon = document.getElementById('theme-icon');
+  const label = document.getElementById('theme-label');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    if (icon) { icon.textContent = '☀️'; label.textContent = 'Light'; }
+  }
+})();
+</script>
+</body>
+</html>
