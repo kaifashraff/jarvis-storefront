@@ -1,0 +1,6 @@
+{
+  "upi_vpa": "",
+  "payee_name": "Kaif Ashraf",
+  "whatsapp": "919987314177",
+  "note": "Fill upi_vpa with your UPI ID (e.g., kaifashraf@okhdfcbank). Order page reads this via window.UPI_ID."
+}
